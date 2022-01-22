@@ -16,20 +16,21 @@ Enter received_filed(field values that comes from the front-end side) and requir
 
 .. code-block:: bash
 
-    >>> from validate_field.validation import validate_field
-    >>> received_filed = {
-            'id':1,
-            'name':"sarath",
-            'email':'test@gmail.com',
-            'mobile':'+918330069872',
-            'password':"abc@122#"
-        }
-    >>> required_filed = [
-            ['id','int'],
-            ['name','alpha'],
-            ['email','email'],
-            ['mobile','phone'],
-            ['password','str']
-        ]
+    from validate_field.validation import validate_field
+    
+    received_filed = {
+        'id':1,
+        'name':"sarath",
+        'email':'test@gmail.com',
+        'mobile':'+918330069872',
+        'password':"abc@122#"
+    }
+    required_filed = [
+        ['id','int'],
+        ['name','alpha'],
+        ['email','email'],
+        ['mobile','phone'],
+        ['password','str']
+    ]
    
-    >>> validate_field.validate_field(received_filed, required_filed)
+    validate_field.validate_field(received_filed, required_filed)
