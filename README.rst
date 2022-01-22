@@ -17,7 +17,7 @@ Enter received_filed(field values that comes from the customer side) and require
 .. code-block:: bash
 
     >>> from src.validate_field import filed_exists
-    >>> received_filed = {"email":"email", "phone_number":"+918330063408"}
+    >>> received_filed = {"email":"dummy@xyz.com", "phone_number":"+919988776655"}
     >>> required_filed = [['phone_number','phone'],['email','email']]
    
     >>> validate_field.filed_exists(received_filed, required_filed)
