@@ -2,14 +2,18 @@ from validate_field.validation import validate_field
 
 
 received_filed = {
-	'user_login_id':1,
-	'user_name':'test@',
-	'email':'test@gmail.com'
+	'id':1,
+	'name':"sarath",
+	'email':'test@gmail.com',
+	'mobile':'+918330069872',
+	'password':"abc@122#"
 }
 required_filed = [
-    ['user_login_id','int'],
-    ['user_name','alpha'],
-    ['email','email']
+    ['id','int'],
+    ['name','alpha'],
+    ['email','email'],
+    ['mobile','phone'],
+    ['password','str']
 ]
 
 validation_result = validate_field(received_filed, required_filed)
