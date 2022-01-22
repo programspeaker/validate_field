@@ -2,7 +2,7 @@ import phonenumbers
 from django.core.validators import validate_email
 
 
-def filed_exists(received_filed, required_filed):
+def validate_field(received_filed, required_filed):
     message = ''
     for i in required_filed:
         if i[0] not in received_filed or (i[0] in received_filed and received_filed[i[0]]==''):
