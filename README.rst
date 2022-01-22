@@ -8,16 +8,28 @@ Installing
 
 .. code-block:: bash
     
-    pip install validate_email
+    pip install validate-field
 
 Usage
 =====
-Enter received_filed(field values that comes from the customer side) and required_filed(list of values need to be check)
+Enter received_filed(field values that comes from the front-end side) and required_filed(list of values that need to be check in th back-end)
 
 .. code-block:: bash
 
-    >>> from src.validate_field import validate_field
-    >>> received_filed = {"email":"dummy@xyz.com", "phone_number":"+919988776655"}
-    >>> required_filed = [['phone_number','phone'],['email','email']]
+    >>> from validate_field.validation import validate_field
+    >>> received_filed = {
+            'id':1,
+            'name':"sarath",
+            'email':'test@gmail.com',
+            'mobile':'+918330069872',
+            'password':"abc@122#"
+        }
+    >>> required_filed = [
+            ['id','int'],
+            ['name','alpha'],
+            ['email','email'],
+            ['mobile','phone'],
+            ['password','str']
+        ]
    
     >>> validate_field.validate_field(received_filed, required_filed)
