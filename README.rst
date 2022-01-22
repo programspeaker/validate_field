@@ -33,4 +33,5 @@ Enter received_filed(field values that comes from the front-end side) and requir
         ['password','str']
     ]
    
-    validate_field.validate_field(received_filed, required_filed)
+    validation_result = validate_field(received_filed, required_filed)
+    print(validation_result)
