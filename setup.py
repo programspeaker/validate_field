@@ -9,8 +9,8 @@ setup(
     author_email='programspeaker@gmail.com',
     packages=find_packages('src'),
     package_dir={'': 'src'},
-    url='https://github.com/gmyrianthous/example-publish-pypi',
-    keywords='example project',
+    url='https://github.com/programspeaker/validate_field',
+    keywords='validate field',
     install_requires=[
           'scikit-learn',
       ],
