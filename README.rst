@@ -1,23 +1,48 @@
-Validate Filed
+Validate Field
 =======================
 
-This is a project that is used to validate fields, which is empty or it contain accurate values. Before touching the database we can check and raise appropriate error if any mistmatch on it.
+This is a project that is used to validate fields which is empty or it contain accurate values. Before touching the database we can check and raise appropriate error message if any mistmatch on it, else return True.
+
+.. code-block:: bash
+
+    1)  Check value is missed or empty
+    2)  Check wether the datatype is correct or not
+        2.1)    int = Specifies the integer 
+        2.2)    str = Specifies the string  
+        2.3)    email = Specifies the email  
+        2.4)    phone = Specifies the phone number  
+        2.5)    alpha = Specifies the alphabetes  
+        2.6)    '' = Specifies the null value, is equal to str
 
 Installing
 =======================
 
 .. code-block:: bash
     
-    pip install validate_email
+    pip install validate-field
 
 Usage
 =======================
-Enter received_filed(field values that comes from the customer side) and required_filed(list of values need to be check)
+Enter received_field(values that comes from the front-end side) and required_field(list of values that need to be check in th back-end)
 
 .. code-block:: bash
 
-    >>> from src.validate_field import validate_field
-    >>> received_filed = {"email":"dummy@xyz.com", "phone_number":"+919988776655"}
-    >>> required_filed = [['phone_number','phone'],['email','email']]
+    from validate_field.validation import validate_field
+    
+    received_filed = {
+        'id':1,
+        'name':"testuser",
+        'email':'testmail@gmail.com',
+        'mobile':'+918330069872',
+        'password':"testpass@122#"
+    }
+    required_filed = [
+        ['id','int'],
+        ['name','alpha'],
+        ['email','email'],
+        ['mobile','phone'],
+        ['password','str']
+    ]
    
-    >>> validate_field.validate_field(received_filed, required_filed)
+    validation_result = validate_field(received_filed, required_filed)
+    print(validation_result)
