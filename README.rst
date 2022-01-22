@@ -1,7 +1,7 @@
 Validate Field
 =======================
 
-This is a project that is used to validate fields which is empty or it contain accurate values. Before touching the database we can check and raise appropriate error message if any mistmatch on it.
+This is a project that is used to validate fields which is empty or it contain accurate values. Before touching the database we can check and raise appropriate error message if any mistmatch on it, else return True.
 
 .. code-block:: bash
 
