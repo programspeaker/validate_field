@@ -1,7 +1,15 @@
 Validate Field
 =======================
 
-This is a project that is used to validate fields, which is empty or it contain accurate values. Before touching the database we can check and raise appropriate error if any mistmatch on it.
+This is a project that is used to validate fields which is empty or it contain accurate values. Before touching the database we can check and raise appropriate error message if any mistmatch on it.
+1)  Check value is missed or empty
+2)  Check wether the datatype is correct or not
+    2.1)    int = Specifies the integer 
+    2.2)    str = Specifies the string  
+    2.3)    email = Specifies the email  
+    2.4)    phone = Specifies the phone number  
+    2.5)    alpha = Specifies the alphabetes  
+    2.6)    '' = Specifies the null value, is equal to str
 
 Installing
 =======================
@@ -12,7 +20,7 @@ Installing
 
 Usage
 =======================
-Enter received_filed(field values that comes from the front-end side) and required_filed(list of values that need to be check in th back-end)
+Enter received_field(values that comes from the front-end side) and required_field(list of values that need to be check in th back-end)
 
 .. code-block:: bash
 
@@ -20,10 +28,10 @@ Enter received_filed(field values that comes from the front-end side) and requir
     
     received_filed = {
         'id':1,
-        'name':"sarath",
-        'email':'test@gmail.com',
+        'name':"testuser",
+        'email':'testmail@gmail.com',
         'mobile':'+918330069872',
-        'password':"abc@122#"
+        'password':"testpass@122#"
     }
     required_filed = [
         ['id','int'],
