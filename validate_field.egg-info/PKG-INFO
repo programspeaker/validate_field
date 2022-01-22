@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: validate-field
+Version: 0.2
+Summary: UNKNOWN
+Home-page: https://github.com/programspeaker/validate_field/
+Author: Sarath Chandran
+Author-email: programspeaker@gmail.com
+Maintainer: Sarath Chandran
+License: MIT
+Keywords: validate_field
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+License-File: LICENSE
+
+UNKNOWN
+
