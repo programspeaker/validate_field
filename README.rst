@@ -7,6 +7,7 @@ Installing
 ============
 
 .. code-block:: bash
+    
     pip install validate_email
 
 Usage
