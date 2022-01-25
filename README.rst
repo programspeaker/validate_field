@@ -75,10 +75,10 @@ Scenario : Avoid name field
     ====================
     >> name is not found
  
+
+**Usecase 2** :- Check field is empty or not
  
- **Usecase 2** :- Check field is empty or not
- 
- Scenario : Empty name field(name = "")
+Scenario : Empty name field(name = "")
 
 .. code-block:: bash
 
