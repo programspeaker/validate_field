@@ -238,7 +238,7 @@ Scenario : Pass 'mobile' field with invalid country code +90
 
 Rule : 'mobile' should be in correct format(Correct length)
  
-Scenario : Pass 'mobile' field with invalid length +918330 & +918330069872333333
+Scenario : Pass 'mobile' field with invalid length +918330 or +918330069872333333
 
 .. code-block:: bash
 
@@ -246,7 +246,7 @@ Scenario : Pass 'mobile' field with invalid length +918330 & +918330069872333333
         'id':1,
         'name':"testuser",
         'email':'testmail@gmail.com',
-        'mobile':'+918330069872',
+        'mobile':'+918330',
         'password':"testpass@122#"
     }
     required_field = [
@@ -296,9 +296,9 @@ Scenario : Pass 'password' field with integer value
     >> password is not a string value
   
 
-If you are does not specify the field type automatically it will be consider as **string value**
+If you are does not specify the field type, then the field type will be consider as **string**(str)
  
-Scenario : Specify 'password' field type as ''
+Scenario : Specify 'password' field type as " "
 
  .. code-block:: bash
 
