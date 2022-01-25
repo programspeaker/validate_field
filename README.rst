@@ -46,6 +46,10 @@ Enter received_field(values that comes from the front-end side) and required_fie
    
     validation_result = validate_field(received_filed, required_filed)
     print(validation_result)
+    
+    Result
+    ====================
+    >> True
  
 
 **Usecase 1** :- Check field is missing or not
