@@ -78,7 +78,7 @@ Scenario : Avoid 'name' field
     >> name is not found
  
 
-**Usecase 2** :- Check field is empty or not
+**Usecase 2** :- Check field is empty or not("")
 
 Rule : name field is mandatory(required field)
 
@@ -110,17 +110,17 @@ Scenario : Avoid 'name' field value(name = "")
     >> name is not found
  
  
-**Usecase 3** :- Check integer field
+**Usecase 3** :- Check integer field(int)
 
-Rule : name field is mandatory(required field)
+Rule : 'id' field only allow integer values
 
-Scenario : 'id' field value is integer or not
+Scenario : Pass string value to the field 'id'
 
 .. code-block:: bash
 
     received_field = {
-        'id':"1",
-        'name':"",
+        'id':"a",
+        'name':"testuser",
         'email':'testmail@gmail.com',
         'mobile':'+918330069872',
         'password':"testpass@122#"
@@ -141,15 +141,17 @@ Scenario : 'id' field value is integer or not
     >> id is not an integer value
   
  
-**Usecase 4** :- Check alpha field
+**Usecase 4** :- Check alpha field(alpha)
+
+Rule : 'name' field only allow alphabetes
  
-Scenario : 'name' field value is integer or not
+Scenario : Pass integer values along with the field 'name'
 
 .. code-block:: bash
 
     received_field = {
-        'id':"1",
-        'name':"",
+        'id':1,
+        'name':"testuser123",
         'email':'testmail@gmail.com',
         'mobile':'+918330069872',
         'password':"testpass@122#"
@@ -167,4 +169,153 @@ Scenario : 'name' field value is integer or not
     
     Result
     ====================
-    >> id is not an integer value
+    >> name is only allow alphabets
+    
+ 
+**Usecase 5** :- Check email field(email)
+
+Rule : 'email' should be in correct format
+ 
+Scenario : Pass incorrect format to the field 'email'
+
+.. code-block:: bash
+
+    received_field = {
+        'id':1,
+        'name':"testuser",
+        'email':'testmail.com',
+        'mobile':'+918330069872',
+        'password':"testpass@122#"
+    }
+    required_field = [
+        ['id','int'],
+        ['name','alpha'],
+        ['email','email'],
+        ['mobile','phone'],
+        ['password','str']
+    ]
+   
+    validation_result = validate_field(received_field, required_field)
+    print(validation_result)
+    
+    Result
+    ====================
+    >> email is not valid
+ 
+ 
+**Usecase 6** :- Check phonenumber field(phone)
+
+Rule : 'mobile' should be in correct format(Correct country code)
+ 
+Scenario : Pass 'mobile' field with invalid country code +90
+
+.. code-block:: bash
+
+    received_field = {
+        'id':1,
+        'name':"testuser",
+        'email':'testmail@gmail.com',
+        'mobile':'+908330069872',
+        'password':"testpass@122#"
+    }
+    required_field = [
+        ['id','int'],
+        ['name','alpha'],
+        ['email','email'],
+        ['mobile','phone'],
+        ['password','str']
+    ]
+   
+    validation_result = validate_field(received_field, required_field)
+    print(validation_result)
+    
+    Result
+    ====================
+    >> mobile is not a valid phone number
+
+
+**Usecase 7** :- Check phonenumber field(phone)
+
+Rule : 'mobile' should be in correct format(Correct length)
+ 
+Scenario : Pass 'mobile' field with invalid length +918330 & +918330069872333333
+
+.. code-block:: bash
+
+    received_field = {
+        'id':1,
+        'name':"testuser",
+        'email':'testmail@gmail.com',
+        'mobile':'+918330069872',
+        'password':"testpass@122#"
+    }
+    required_field = [
+        ['id','int'],
+        ['name','alpha'],
+        ['email','email'],
+        ['mobile','phone'],
+        ['password','str']
+    ]
+   
+    validation_result = validate_field(received_field, required_field)
+    print(validation_result)
+    
+    Result
+    ====================
+    >> mobile is not a valid phone number
+ 
+ 
+**Usecase 8** :- Check string field(str)
+
+Rule : 'password' field only allow string
+
+Scenario : Pass 'password' field with integer value
+
+.. code-block:: bash
+
+    received_field = {
+        'id':1,
+        'name':"testuser",
+        'email':'testmail@gmail.com',
+        'mobile':'+918330069872',
+        'password':123
+    }
+    required_field = [
+        ['id','int'],
+        ['name','alpha'],
+        ['email','email'],
+        ['mobile','phone'],
+        ['password','str']
+    ]
+   
+    validation_result = validate_field(received_field, required_field)
+    print(validation_result)
+    
+    Result
+    ====================
+    >> password is not a string value
+  
+
+If you are does not specify the field type automatically it will be consider as **string value**
+ 
+Scenario : Specify 'password' field type as ''
+
+ .. code-block:: bash
+
+    received_field = {
+        'id':1,
+        'name':"testuser",
+        'email':'testmail@gmail.com',
+        'mobile':'+918330069872',
+        'password':"testpass@122#"
+    }
+    required_field = [
+        ['id','int'],
+        ['name','alpha'],
+        ['email','email'],
+        ['mobile','phone'],
+        ['password','']
+    ]
+ 
+ 
+Here password consider as string value.
