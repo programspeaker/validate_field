@@ -48,7 +48,29 @@ Enter received_field(values that comes from the front-end side) and required_fie
     print(validation_result)
  
 
-Text that is not a quote
+**Usecase 1** :- Field is missing or not
 
-> Text that is a quote
-**Usage**
+Scenario : Avoid name filed
+
+.. code-block:: bash
+
+    received_field = {
+        'id':1,
+        'email':'testmail@gmail.com',
+        'mobile':'+918330069872',
+        'password':"testpass@122#"
+    }
+    required_field = [
+        ['id','int'],
+        ['name','alpha'],
+        ['email','email'],
+        ['mobile','phone'],
+        ['password','str']
+    ]
+   
+    validation_result = validate_field(received_field, required_field)
+    print(validation_result)
+    
+    Result
+    ====================
+    >> name is not found
