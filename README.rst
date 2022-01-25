@@ -50,7 +50,8 @@ Enter received_field(values that comes from the front-end side) and required_fie
 
 **Usecase 1** :- Check field is missing or not
 
-Scenario : Avoid name field
+Rule : name field is mandatory(required field)
+Scenario : Avoid 'name' field
 
 .. code-block:: bash
 
@@ -77,8 +78,10 @@ Scenario : Avoid name field
  
 
 **Usecase 2** :- Check field is empty or not
- 
-Scenario : Empty name field(name = "")
+
+Rule : name field is mandatory(required field)
+Scenario : Avoid 'name' field value(name = "")
+
 
 .. code-block:: bash
 
@@ -103,3 +106,62 @@ Scenario : Empty name field(name = "")
     Result
     ====================
     >> name is not found
+ 
+ 
+**Usecase 3** :- Check integer field
+
+Rule : name field is mandatory(required field)
+Scenario : 'id' field value is integer or not
+
+.. code-block:: bash
+
+    received_field = {
+        'id':"1",
+        'name':"",
+        'email':'testmail@gmail.com',
+        'mobile':'+918330069872',
+        'password':"testpass@122#"
+    }
+    required_field = [
+        ['id','int'],
+        ['name','alpha'],
+        ['email','email'],
+        ['mobile','phone'],
+        ['password','str']
+    ]
+   
+    validation_result = validate_field(received_field, required_field)
+    print(validation_result)
+    
+    Result
+    ====================
+    >> id is not an integer value
+  
+ 
+**Usecase 4** :- Check alpha field
+ 
+Scenario : 'name' field value is integer or not
+
+.. code-block:: bash
+
+    received_field = {
+        'id':"1",
+        'name':"",
+        'email':'testmail@gmail.com',
+        'mobile':'+918330069872',
+        'password':"testpass@122#"
+    }
+    required_field = [
+        ['id','int'],
+        ['name','alpha'],
+        ['email','email'],
+        ['mobile','phone'],
+        ['password','str']
+    ]
+   
+    validation_result = validate_field(received_field, required_field)
+    print(validation_result)
+    
+    Result
+    ====================
+    >> id is not an integer value
