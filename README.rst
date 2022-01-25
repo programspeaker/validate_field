@@ -48,14 +48,43 @@ Enter received_field(values that comes from the front-end side) and required_fie
     print(validation_result)
  
 
-**Usecase 1** :- Field is missing or not
+**Usecase 1** :- Check field is missing or not
 
-Scenario : Avoid name filed
+Scenario : Avoid name field
 
 .. code-block:: bash
 
     received_field = {
         'id':1,
+        'email':'testmail@gmail.com',
+        'mobile':'+918330069872',
+        'password':"testpass@122#"
+    }
+    required_field = [
+        ['id','int'],
+        ['name','alpha'],
+        ['email','email'],
+        ['mobile','phone'],
+        ['password','str']
+    ]
+   
+    validation_result = validate_field(received_field, required_field)
+    print(validation_result)
+    
+    Result
+    ====================
+    >> name is not found
+ 
+ 
+ **Usecase 2** :- Check field is empty or not
+ 
+ Scenario : Empty name field(name = "")
+
+.. code-block:: bash
+
+    received_field = {
+        'id':1,
+        'name':"",
         'email':'testmail@gmail.com',
         'mobile':'+918330069872',
         'password':"testpass@122#"
