@@ -51,6 +51,7 @@ Enter received_field(values that comes from the front-end side) and required_fie
 **Usecase 1** :- Check field is missing or not
 
 Rule : name field is mandatory(required field)
+
 Scenario : Avoid 'name' field
 
 .. code-block:: bash
@@ -80,6 +81,7 @@ Scenario : Avoid 'name' field
 **Usecase 2** :- Check field is empty or not
 
 Rule : name field is mandatory(required field)
+
 Scenario : Avoid 'name' field value(name = "")
 
 
@@ -111,6 +113,7 @@ Scenario : Avoid 'name' field value(name = "")
 **Usecase 3** :- Check integer field
 
 Rule : name field is mandatory(required field)
+
 Scenario : 'id' field value is integer or not
 
 .. code-block:: bash
