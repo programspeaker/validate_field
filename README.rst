@@ -200,7 +200,7 @@ Scenario : Pass incorrect format to the field 'email'
     
     Result
     ====================
-    >> email is not valid
+    >>email is not a valid email
  
  
 **Usecase 6** :- Check phonenumber field(phone)
