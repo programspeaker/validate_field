@@ -57,6 +57,17 @@ def validate_field(received_filed, required_filed):
                 message = mistmatch_type_value
                 if message is not True:
                     break
+            elif (field_type == 'bool'):
+                field_name = i[0]
+                field_value = received_filed[i[0]]
+
+                mistmatch_type_value = is_bool(field_name, field_value)
+                message = mistmatch_type_value
+                if message is not True:
+                    break
+            else:
+                message = "Invalid field_type in required_filed"
+                return message
         return message
     except Exception as e:
         exp_message = str(e)
@@ -122,6 +133,19 @@ def is_email(field_name, field_value):
         regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
         if not re.fullmatch(regex, field_value):
             mistmatch_type = field_name + ' is not a valid email'
+            message = mistmatch_type
+            return message
+        else:
+            return True
+    except Exception as e:
+        exp_message = str(e)
+        return exp_message
+
+
+def is_bool(field_name, field_value):
+    try:
+        if type(field_value) is not bool:
+            mistmatch_type = field_name + ' is not a valid boolean value'
             message = mistmatch_type
             return message
         else:
